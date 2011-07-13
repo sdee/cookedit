@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+	<!-- iPad/iPhone specific css below, add after your main css -->
+	<link rel="stylesheet" media="only screen and (max-device-width: 1024px)" href="ipad.css" type="text/css" />		
+	<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />		
+	<link rel="stylesheet" href="main.css" type="text/css" media="screen" title="reset" charset="utf-8" />
+	<script type="text/javascript" src="jquery.js"></script>
+
+	<!-- If you application is targeting iOS BEFORE 4.0 you MUST put json2.js from http://www.JSON.org/json2.js into your www directory and include it here -->
+	<script type="text/javascript" charset="utf-8" src="phonegap.0.9.5.1.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+
+	// If you want to prevent dragging, uncomment this section
+	
+	function preventBehavior(e) 
+	{ 
+      e.preventDefault(); 
+    };
+	document.addEventListener("touchmove", preventBehavior, false);
+	
+	
+	/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
+	see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+	for more details -jm */
+	/*
+	function handleOpenURL(url)
+	{
+		// TODO: do something with the url passed in.
+	}
+	*/
+	
+	function onBodyLoad()
+	{		
+		document.addEventListener("deviceready",onDeviceReady,false);
+	}
+	
+	/* When this function is called, PhoneGap has been initialized and is ready to roll */
+	/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
+	see http://iphonedevelopertips.com/cocoa/launching-your-own-application-via-a-custom-url-scheme.html
+	for more details -jm */
+	function onDeviceReady()
+	{
+		// do your thing!
+		//navigator.notification.alert("PhoneGap is working")
+	}
+    
+    </script>
+	<title>Cooked.it</title>
+  </head>
+  <body onload="onBodyLoad()">
+
+
+	<div id="header">
+        <div id="home">
+			<a href="capture.html"><img src="img/home.png"/></a>
+		</div>
+        <div id="home">
+			<a href="home.html"><img src="img/home.png"/></a>
+		</div>
+		<div id="kitchen">
+			<a href="kitchen.html"><img src="img/kitchen.png"/></a>
+		</div>
+		<div id="logo">
+			<a href="index.html"><img src="img/logo.png"/></a>
+		</div>
+	</div>
+
+	<div class="section challenges">
+		<div class="title">This Week's Challenges</div>
+		<div class="recipe-link"><a href="recipe.html"><img src="img/foods/food-1.jpeg" /></a></div>
+		<div class="recipe-link"><a href="recipe.html"><img src="img/foods/food-4.jpeg" /></a></div>
+		<div class="recipe-link"><a href="recipe.html"><img src="img/foods/food-3.jpeg" /></a></div>
+
+	</div>
+	<div class="section archive">
+		<div class="title">Archive</div>
+		<div class="recipe-link"><a href="recipe.html"><img src="img/foods/food-11.jpeg" /></a></div>
+		<div class="recipe-link"><a href="recipe.html"><img src="img/foods/food-9.jpeg" /></a></div>
+		<div class="recipe-link"><a href="recipe.html"><img src="img/foods/food-2.jpeg" /></a></div>
+		<div class="recipe-link"><a href="recipe.html"><img src="img/foods/food-6.jpeg" /></a></div>
+		<div class="recipe-link"><a href="recipe.html"><img src="img/foods/food-3.jpeg" /></a></div>
+		<div class="recipe-link"><a href="recipe.html"><img src="img/foods/food-5.jpeg" /></a></div>
+		<div class="recipe-link"><a href="recipe.html"><img src="img/foods/food-4.jpeg" /></a></div>
+	</div>
+	<div class="section kitchen">
+		<div class="title">Kitchen</div>
+		<div class="recipe-link"><a href="recipe.html"><img src="img/foods/food-7.jpeg" /></a></div>
+		<div class="recipe-link"><a href="recipe.html"><img src="img/foods/food-8.jpeg" /></a></div>
+		<div class="recipe-link"><a href="recipe.html"><img src="img/foods/food-3.jpeg" /></a></div>
+		<div class="recipe-link"><a href="recipe.html"><img src="img/foods/food-1.jpeg" /></a></div>
+		<div class="recipe-link"><a href="recipe.html"><img src="img/foods/food-4.jpeg" /></a></div>
+		<div class="recipe-link"><a href="recipe.html"><img src="img/foods/food-6.jpeg" /></a></div>
+		<div class="recipe-link"><a href="recipe.html"><img src="img/foods/food-10.jpeg" /></a></div>
+	</div>
+
+  </body>
+</html>

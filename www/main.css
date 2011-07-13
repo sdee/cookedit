@@ -1,0 +1,138 @@
+body {
+	border: 1px solid #aaaaaa;
+	width: 1024px; height: 768px;
+	margin: 0 auto;
+}
+
+ul { margin: 0; padding: 0; }
+
+/*** GENERAL ***/
+#header {
+	border-bottom: 2px solid #333333;
+	margin-bottom: 10px;
+	padding: 3px 0 5px;
+}
+#home {
+	width: 30px; height: 29px;
+	float: left;
+	margin: 15px 0 0 20px;
+}
+#kitchen {
+	width: 30px; height: 29px;
+	float: left;
+	margin: 15px 0 0 10px;
+}
+#camera {
+	float: right;
+	margin: 15px 15px 0 0;
+}
+#logo {
+	background: url('img/logo.png') no-repeat;
+	width: 120px; height: 50px;
+	margin: 0 auto;
+}
+
+/*** MAIN VIEW ***/
+.section {
+	height: 230px;
+	border-top: 1px solid #aaaaaa;
+	text-align: center;
+}
+.section .title {
+	font-size: 20px;
+	font-weight: bold;
+	color: #aa1122;
+	margin: 5px auto 15px;
+	padding: 0 10px;
+	text-align: left;
+}
+.section .recipe-link, .my-dishes .recipe-link, .friends-dishes .recipe-link {
+	display: inline-block;
+	width: 129px; height: 114px;
+	overflow: hidden;
+	margin: 3px;
+	border: 1px solid #bbbbbb;
+}
+.section .recipe-link:hover, .my-dishes .recipe-link:hover, .friends-dishes .recipe-link:hover {
+	border-color: #555555;
+}
+.section img {
+	width: 125px; height: 110px;
+	margin: 2px;
+}
+
+
+/*** RECIPE VIEW ***/
+.ingredients {
+	position: relative;
+	width: 250px; height: 668px; /* explicit height hack to just make sure the column fills */
+	float: left;
+	border-right: 1px solid #666666;
+	margin-right: 10px;
+	padding: 15px;
+}
+.ingredients ul {
+	list-style-type: none;
+	font-size: 20px;
+	bottom: 10px;
+}
+.ingredients li {
+	list-style-type: none;
+	font-size: 20px;
+	bottom: 10px;
+}
+.ingredients .title {
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	margin: 15px 0 25px;
+}
+
+.ingredients .links {
+	position: relative;	
+	bottom: 5px;
+	display: block;
+	padding: 400px 12px;
+}
+
+.directions {
+	float: left;
+	width: 700px;
+}
+.directions .image-container { padding: 2px; margin: 0 auto; width: 150px; height: 120px; border: 1px solid #dddddd; }
+.directions img {
+	width: 150px; height: 120px;
+}
+
+.directions .steps li {
+	margin-top: 10px;
+	
+}
+
+/*** KITCHEN VIEW ***/
+
+.my-dishes img, .friends-dishes img { width: 125px; height: 110px; margin: 2px; }
+
+.badges {
+	text-align: center;
+	border-bottom: 1px solid #666666;
+	margin-bottom: 30px;
+}
+.badge {
+	display: inline-block;
+	width: 150px;
+}
+.badge-icon { width: 100px; }
+
+.my-dishes, .friends-dishes {
+	float: left;
+	width: 512px;
+	text-align: center;
+}
+.my-dishes .title, .friends-dishes .title {
+	font-weight: bold;
+	font-size: 18px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+

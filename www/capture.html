@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Capture Image</title>
+	<link rel="stylesheet" href="main.css" type="text/css" media="screen" title="reset" charset="utf-8" />
+	<script type="text/javascript" charset="utf-8" src="phonegap.0.9.5.1.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+		var pictureSource;   // picture source
+		var destinationType; // sets the format of returned value 
+             
+				   
+		function preventBehavior(e) 
+		{ 
+			e.preventDefault(); 
+		};
+		document.addEventListener("touchmove", preventBehavior, false);
+											
+		function onBodyLoad()
+		{
+			console.log('starting onBodyLoad');
+			document.addEventListener("deviceready",onDeviceReady,false);				
+			console.log('stopping onBodyLoad');				
+		}
+			
+		/* When this function is called, PhoneGap has been initialized and is ready to roll */
+		function onDeviceReady()
+		{
+			pictureSource=navigator.camera.PictureSourceType;
+			destinationType=navigator.camera.DestinationType;
+		}
+
+    // Called when capture operation is finished
+    //
+    function captureSuccess(mediaFiles) {
+		alert('In captureSuccess()');
+        var i, len;
+        for (i = 0, len = mediaFiles.length; i < len; i += 1) {
+            uploadFile(mediaFiles[i]);
+        }       
+    }
+
+    // Called if something bad happens.
+    // 
+    function captureError(error) {
+		alert('In captureError()');
+        var msg = 'An error occurred during capture: ' + error.code;
+		alert(msg, null, 'Uh oh!');
+    }
+
+    // A button will call this function
+    //
+    function captureImage() {
+        // Launch device camera application, 
+		alert('In captureImage()');
+        navigator.camera.capture.captureImage(captureSuccess, captureError);
+    }
+
+    // Upload files to server
+    function uploadFile(mediaFile) {
+		alert('In uploadFile()');
+        var ft = new FileTransfer(),
+            path = mediaFile.fullPath,
+            name = mediaFile.name;
+
+        ft.upload(path,
+            "http://my.domain.com/upload.php",
+            function(result) {
+                console.log('Upload success: ' + result.responseCode);
+                console.log(result.bytesSent + ' bytes sent');
+            },
+            function(error) {
+                console.log('Error uploading file ' + path + ': ' + error.code);
+            },
+            { fileName: name });   
+    }
+
+    </script>
+    </head>
+    <body>
+		<div id="camera">
+			<a href="#" onClick="captureImage();"><img src="img/camera.png"/></a>
+		</div>
+    </body>
+</html>
