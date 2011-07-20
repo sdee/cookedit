@@ -54,29 +54,16 @@
 	<title>Cooked.it</title>
   </head>
   <body onload="onBodyLoad()">
-
-
-	<div id="header">
-        <div id="home">
-			<a href="capture.html"><img src="img/home.png"/></a>
-		</div>
-        <div id="home">
-			<a href="home.html"><img src="img/home.png"/></a>
-		</div>
-		<div id="kitchen">
-			<a href="kitchen.html"><img src="img/kitchen.png"/></a>
-		</div>
-		<div id="logo">
-			<a href="index.html"><img src="img/logo.png"/></a>
-		</div>
-	</div>
-
+<div class="frame">
+	<iframe src="_header.html" id="header" scrolling="no">
+	  <p>Your browser does not support iframes.</p>
+	</iframe>
+	<div id="content">
 	<div class="section challenges">
 		<div class="title">This Week's Challenges</div>
 		<div class="recipe-link"><a href="recipe.html"><img src="img/foods/food-1.jpeg" /></a></div>
 		<div class="recipe-link"><a href="recipe.html"><img src="img/foods/food-4.jpeg" /></a></div>
 		<div class="recipe-link"><a href="recipe.html"><img src="img/foods/food-3.jpeg" /></a></div>
-
 	</div>
 	<div class="section archive">
 		<div class="title">Archive</div>
@@ -99,5 +86,7 @@
 		<div class="recipe-link"><a href="recipe.html"><img src="img/foods/food-10.jpeg" /></a></div>
 	</div>
 
+</div>
+</div>
   </body>
 </html>
